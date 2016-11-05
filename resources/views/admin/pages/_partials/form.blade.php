@@ -7,21 +7,21 @@
 	<input type="hidden" name="_token" value="{{ csrf_token() }}">
 	<div class="form-group">
 		<label for="title">Title</label>
-		<input type="text" name="title" class="form-control" id="title" value="{{ $page->title }}">
+		<input type="text" name="title" class="form-control" id="title" value="{{ !empty($page) ? $page->title : '' }}">
 	</div>
 	@if($action == 'Save')
 		<div class="form-group">
 			<label for="slug">Slug</label>
-			<input type="text" name="slug" class="form-control" id="slug" value="{{ $page->slug }}">
+			<input type="text" name="slug" class="form-control" id="slug" value="{{ !empty($page) ? $page->slug : ''  }}">
 		</div>
 	@endif
 	<div class="form-group">
 		<label for="date">Published Date</label>
-		<input type="text" name="publication_date" class="form-control" id="date" value="{{ $page->publication_date }}">
+		<input type="text" name="publication_date" class="form-control" id="date" value="{{ !empty($page) ? $page->publication_date : ''  }}">
 	</div>
 	<div class="form-group">
 		<label for="body">Body</label>
-		<textarea class="form-control" name="body" rows="10">{{ $page->body }}</textarea>
+		<textarea class="form-control" name="body" rows="10">{{ !empty($page) ? $page->body : ''  }}</textarea>
 	</div>
 	<button type="submit">{{ $action }}</button>
 </form>
