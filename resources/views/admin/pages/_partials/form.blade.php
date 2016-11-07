@@ -14,6 +14,8 @@
 			<label for="slug">Slug</label>
 			<input type="text" name="slug" class="form-control" id="slug" value="{{ !empty($page) ? $page->slug : ''  }}">
 		</div>
+	@else
+		<input type="hidden" name="slug" value="">
 	@endif
 	<div class="form-group">
 		<label for="date">Published Date</label>

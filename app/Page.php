@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 class Page extends Model
@@ -10,11 +11,11 @@ class Page extends Model
 		'title', 'slug', 'body', 'publication_date',
 	];
 
-	public function setTitleAttribute($value)
-	{
-		$this->attributes['title'] = $value;
-        $this->attributes['slug'] = str_slug($value);
-	}
+	public function setPublicationDateAttribute($value)
+    {
+        if (empty($value))
+            $this->attributes['publication_date'] = Carbon::now();
+    }
 
 	public function setSlugAttribute($value)
 	{
@@ -23,4 +24,5 @@ class Page extends Model
 		else
 			$this->attributes['slug'] = str_slug($value);
 	}
+
 }

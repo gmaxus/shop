@@ -25,7 +25,6 @@ class PageRequest extends FormRequest
     {
         return 	[
 					'title' => 'required|max:255|min:3',
-					'publication_date' => 'required',
 					'body' => 'required',
         		];
     }
