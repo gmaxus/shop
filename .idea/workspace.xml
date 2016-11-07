@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5b454ab1-7c8e-43e4-9e07-1c01682de5ae" name="Default" comment="">
+    <list default="true" id="5b454ab1-7c8e-43e4-9e07-1c01682de5ae" name="Default" comment="fixed time zone&#10;added catalogs migration table&#10;fixed slug in page controller">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Catalog.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Product.php" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/autoload.php" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bin/php-parse" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/bin/phpunit" afterPath="" />
@@ -1018,7 +1021,6 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Migrations/MigrationRepositoryInterface.php" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Migrations/stubs/blank.stub" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Migrations/stubs/create.stub" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Migrations/stubs/update.stub" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/MySqlConnection.php" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/PostgresConnection.php" afterPath="" />
@@ -1321,7 +1323,6 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Routing/Console/ControllerMakeCommand.php" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Routing/Console/MiddlewareMakeCommand.php" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Routing/Console/stubs/controller.plain.stub" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Routing/Console/stubs/controller.stub" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Routing/Console/stubs/middleware.stub" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Routing/Controller.php" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php" afterPath="" />
@@ -5530,17 +5531,9 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/webmozart/assert/phpunit.xml.dist" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/webmozart/assert/src/Assert.php" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/webmozart/assert/tests/AssertTest.php" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/vendor/hamcrest/hamcrest-php/generator/parts/functions_footer.txt" afterPath="$PROJECT_DIR$/todo.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Cache/Console/stubs/cache.stub" afterPath="$PROJECT_DIR$/database/migrations/2016_11_07_154700_create_catalogs_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.env" afterPath="$PROJECT_DIR$/.env" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Migrations/stubs/create.stub" afterPath="$PROJECT_DIR$/database/migrations/2016_11_07_163307_create_products_table.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Routing/Console/stubs/controller.stub" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CatalogController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Requests/PageRequest.php" afterPath="$PROJECT_DIR$/app/Http/Requests/PageRequest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Page.php" afterPath="$PROJECT_DIR$/app/Page.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/app.php" afterPath="$PROJECT_DIR$/config/app.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/pages/_partials/form.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/pages/_partials/form.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" />
     </list>
     <ignored path="shop.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -5601,7 +5594,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Catalog.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Catalog.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Catalog.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="195">
@@ -5609,6 +5602,16 @@
               <folding>
                 <element signature="e#23#41#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="9" selection-start-line="0" selection-start-column="9" selection-end-line="0" selection-end-column="9" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -5678,6 +5681,7 @@
         <option value="$PROJECT_DIR$/app/Product.php" />
         <option value="$PROJECT_DIR$/app/Catalog.php" />
         <option value="$PROJECT_DIR$/todo.php" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -6033,43 +6037,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="seeds" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="shop" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="shop" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="database" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="migrations" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="shop" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="shop" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="database" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="factories" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -6116,28 +6084,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Http" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="shop" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="shop" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Http" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Requests" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -6234,6 +6180,7 @@
       <recent name="$PROJECT_DIR$/app/Http/Controllers/Admin" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/resources/views/layouts" />
       <recent name="$PROJECT_DIR$/resources/views/errors" />
     </key>
@@ -6308,7 +6255,7 @@
       <workItem from="1478495325316" duration="2626000" />
       <workItem from="1478498136959" duration="651000" />
       <workItem from="1478499170129" duration="268000" />
-      <workItem from="1478499546936" duration="5694000" />
+      <workItem from="1478499546936" duration="6379000" />
     </task>
     <task id="LOCAL-00001" summary="fixed error with title/slug&#10;added Pages in admin menu">
       <created>1478366979487</created>
@@ -6317,17 +6264,24 @@
       <option name="project" value="LOCAL" />
       <updated>1478366979487</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="fixed time zone&#10;added catalogs migration table&#10;fixed slug in page controller">
+      <created>1478513194725</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1478513194725</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36650000" />
+    <option name="totallyTimeSpent" value="37335000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2746781" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2746781" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -6367,14 +6321,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="15" column="3" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Middleware/isAdmin.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -6757,6 +6703,14 @@
           <folding>
             <element signature="e#23#41#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="9" selection-start-line="0" selection-start-column="9" selection-end-line="0" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>
